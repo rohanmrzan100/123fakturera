@@ -1,0 +1,185 @@
+.mainBody {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.loginBox {
+  background: #fff;
+  width: 660px;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-top: 140px;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-weight: 400;
+}
+
+.loginHeading {
+  font-size: 2.5em;
+  color: #ff0000;
+  letter-spacing: 0.025em;
+  font-weight: 700;
+  text-align: center;
+
+  padding-bottom: 0.5rem;
+}
+
+.loginSection {
+  width: 75%;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.inputSection {
+  margin-top: 1.2rem;
+}
+input {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #ccc;
+  background: none;
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.passwordInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.showPW {
+  position: absolute;
+  margin-right: 20px;
+  height: 40%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.loginButtonSection {
+  text-align: center;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+.loginButton {
+  text-align: center;
+  margin-top: 1.25rem;
+  color: white;
+  padding-top: 1rem;
+  font-size: 18px;
+  padding-bottom: 1rem;
+  background-color: #07a31f;
+  cursor: pointer;
+  border-radius: 40px;
+  border: none;
+  font-weight: 400;
+  width: 35vw;
+  min-width: max-content;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 270px;
+  margin: auto;
+}
+
+.bottomSection {
+  margin: auto;
+  justify-self: center;
+  width: 350px;
+  text-align: center;
+  margin-top: 1.25rem;
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-span {
+  color: red;
+  margin-top: 0.5rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.invalid-credentials {
+  margin: auto;
+}
+
+.invalid-credentials-div {
+  text-align: left;
+  padding-right: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.invalid-credentials-text {
+  --tw-text-opacity: 1;
+  color: red;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.footer {
+  margin-top: auto;
+  background-size: cover;
+  background-position: 50% 50%;
+  font-size: 15px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 20;
+}
+
+.footerMain {
+  margin-top: auto;
+  position: relative;
+  width: 100%;
+  height: 125px;
+}
+.footerTop {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin: auto;
+  border-bottom: 2px solid white;
+}
+
+.fakturaText {
+  font-size: 34px;
+  font-weight: 400;
+  color: white;
+}
+
+.footerMenu {
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+
+.footerMenu > a {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.copyrightText {
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+}
