@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar';
 import styles from './index.module.css';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
-
+import { BACKEND_URL } from '../../constants.js';
 const LoginPage = () => {
   const navigate = useNavigate();
   const [showPw, setShowPw] = useState(false);
@@ -44,7 +44,7 @@ const LoginPage = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const res = await fetch('http://localhost:3001/api/v1/auth/login', {
+        const res = await fetch(BACKEND_URL + '/api/v1/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form),
