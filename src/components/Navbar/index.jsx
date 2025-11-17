@@ -1,24 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './index.module.css';
+import { useTranslation } from 'react-i18next';
 
 const languages = [
-  { label: 'Svenska', flag: 'SE', lang: 'se' },
+  { label: 'Svenska', flag: 'SE', lang: 'sv' },
   { label: 'English', flag: 'GB', lang: 'en' },
 ];
-const NAVBAR_ITEMS = [
-  { label: 'Home', href: '/index.html' },
-  { label: 'Order', href: '/bestall.html' },
-  { label: 'Our Customers', href: '/kunder.html' },
-  { label: 'About us', href: '/omoss.html' },
-  { label: 'Contact Us', href: '/kontaktaoss.html' },
-];
+
 const Navbar = () => {
   const [showLangDropDown, setShowLangDropDown] = useState(false);
   const [showMenuDropDown, setShowMenuDropDown] = useState(false);
   const [language, setLanguage] = useState(languages[1]);
   const dropdownRef = useRef(null);
   const menuDropdownRef = useRef(null);
-
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -38,11 +33,19 @@ const Navbar = () => {
   const handleLangSelect = (label) => {
     const selected = languages.find((l) => l.label === label);
     if (selected) {
+      changeLanguage(selected.lang);
       setLanguage(selected);
       setShowLangDropDown(false);
     }
   };
-
+  const changeLanguage = (lng) => i18n.changeLanguage(lng);
+  const NAVBAR_ITEMS = [
+    { label: t('Home'), href: '/index.html' },
+    { label: t('Order'), href: '/bestall.html' },
+    { label: t('Our Customers'), href: '/kunder.html' },
+    { label: t('About us'), href: '/omoss.html' },
+    { label: t('Contact Us'), href: '/kontaktaoss.html' },
+  ];
   return (
     <nav className={styles.navigationOut}>
       <header className={styles.navigationHeader}>

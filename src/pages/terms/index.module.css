@@ -1,0 +1,57 @@
+.content {
+  padding-bottom: 100px;
+}
+
+.termsSection {
+  position: relative;
+  margin: auto;
+  margin-top: 1rem;
+  width: 70%;
+  padding-bottom: 0.25rem;
+}
+
+.termsTopText {
+  margin-bottom: 3em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.termsHeading {
+  font-size: 1.5em;
+}
+
+.goBackButton {
+  font-size: 1.125em;
+  margin-top: 1.5em;
+  border-radius: 3rem;
+  color: white;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: rgb(8, 158, 30);
+  cursor: pointer;
+  width: 35vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 40px;
+  padding-right: 40px;
+  min-width: max-content;
+  max-width: 270px;
+  border: none;
+}
+
+.backTerms {
+  background: #fff;
+  width: 750px;
+  border-radius: 20px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 40px 40px 40px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 16px;
+}

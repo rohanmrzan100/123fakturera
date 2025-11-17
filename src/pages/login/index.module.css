@@ -183,3 +183,11 @@ input {
   font-size: 18px;
   font-weight: 200;
 }
+
+.errorLabel {
+  color: red;
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 4px;
+  font-weight: 400;
+}

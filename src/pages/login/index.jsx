@@ -1,23 +1,72 @@
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import styles from './index.module.css';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [showPw, setShowPw] = useState(false);
   const [form, setForm] = useState({
     email: '',
     password: '',
   });
+  const [errors, setErrors] = useState({
+    email: '',
+    password: '',
+  });
+  const { t } = useTranslation();
   function toggleShowPw() {
     setShowPw(!showPw);
   }
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+    setErrors({ ...errors, [name]: '' });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!form.email) {
+      newErrors.email = t('This field cannot be empty');
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = t('Please enter a valid email address');
+    }
+
+    if (!form.password) {
+      newErrors.password = t('This field cannot be empty');
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+    if (validate()) {
+      try {
+        const res = await fetch('http://localhost:3001/api/v1/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+          credentials: 'include',
+        });
+
+        const data = await res.json();
+        console.log(data);
+
+        if (!res.ok) {
+          if (data.message === 'Invalid Email') {
+            setErrors({ email: data.message, password: '' });
+          } else if (data.message === 'Incorrect password') {
+            setErrors({ email: '', password: data.message });
+          }
+          return;
+        }
+        navigate('/pricelist');
+      } catch (err) {
+        console.error('Login error:', err);
+      }
+    }
   };
 
   return (
@@ -28,24 +77,25 @@ const LoginPage = () => {
       <Navbar />
       <div className={styles.mainBody}>
         <div className={styles.loginBox}>
-          <form onSubmit={handleSubmit}>
-            <h2 className={styles.loginHeading}>Log in</h2>
+          <form onSubmit={handleSubmit} noValidate>
+            <h2 className={styles.loginHeading}>{t('Log in')}</h2>
 
             <section className={styles.loginSection}>
               <div className={styles.inputSection}>
-                <label>Enter your email address</label>
+                <label>{t('Enter your email address')}</label>
 
                 <input
                   type="email"
                   required
                   name="email"
-                  placeholder="Email address"
+                  placeholder={t('Email address')}
                   value={form.email}
                   onChange={handleChange}
                 />
+                {errors.email && <span className={styles.errorLabel}>{errors.email}</span>}
               </div>
               <div className={styles.inputSection}>
-                <label>Enter your password</label>
+                <label>{t('Enter your password')}</label>
 
                 <div className={styles.passwordInput}>
                   <input
@@ -53,7 +103,7 @@ const LoginPage = () => {
                     id="password"
                     required
                     name="password"
-                    placeholder="Password"
+                    placeholder={t('Password')}
                     value={form.password}
                     onChange={handleChange}
                   />
@@ -73,19 +123,20 @@ const LoginPage = () => {
                     />
                   )}
                 </div>
+                {errors.password && <span className={styles.errorLabel}>{errors.password}</span>}
               </div>
             </section>
             <div className={styles.loginButtonSection}>
               <button className={styles.loginButton} type="submit">
-                Log in
+                {t('Log in')}
               </button>
             </div>
           </form>
 
           <section className={styles.bottomSection}>
-            <a href="/register">Register</a>
+            <a href="/register">{t('Register')}</a>
             <a id="forgot-password-link" href="/forgot-password">
-              Forgotten password?
+              {t('Forgotten password?')}
             </a>
           </section>
         </div>
@@ -96,13 +147,13 @@ const LoginPage = () => {
             <div className={styles.fakturaText}>123 Fakturera</div>
             <div className={styles.footerMenu}>
               <a href="https://www.123fakturera.se/index.html">
-                <p>Home</p>
+                <p>{t('Home')}</p>
               </a>
               <a href="https://www.123fakturera.se/bestall.html">
-                <p>Order</p>
+                <p>{t('Order')}</p>
               </a>
               <a href="https://www.123fakturera.se/kontaktaoss.html">
-                <p>Contact us</p>
+                <p>{t('Contact us')}</p>
               </a>
             </div>
           </div>
