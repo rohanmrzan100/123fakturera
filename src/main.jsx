@@ -4,6 +4,9 @@ import './index.css';
 import App from './App.jsx';
 import i18n from './locals/il8n.js';
 import { I18nextProvider } from 'react-i18next';
+if (import.meta.env.MODE == 'production') {
+  console.log = () => {};
+}
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <I18nextProvider i18n={i18n}>
