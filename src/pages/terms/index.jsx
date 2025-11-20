@@ -26,7 +26,7 @@ const TermsPage = () => {
 
           <div className={styles.termsTopText}>
             <button
-              className={`${styles.goBackButton} ${styles.lowerBackButton}`}
+              className={`${styles.goBackButton}`}
               onClick={handleGoBack}
             >
               {t('Close and Go Back')}

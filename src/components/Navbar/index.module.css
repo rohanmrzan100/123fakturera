@@ -36,7 +36,6 @@ button {
   display: flex;
   align-items: center;
   position: relative;
-  margin: 0 16px;
 }
 
 .langDropk {
@@ -173,7 +172,7 @@ a {
 .dropDownLangName {
   margin-right: 0.5rem;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .menuDropDown {
@@ -213,7 +212,7 @@ a {
 
 .collectionitem {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .flagName,
@@ -225,7 +224,7 @@ a {
 
 .menuItemName {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .flagIcon {
@@ -248,7 +247,7 @@ a {
 
 .languageName {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .langDropWrapper {
