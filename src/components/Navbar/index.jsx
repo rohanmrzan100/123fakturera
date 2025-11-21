@@ -86,9 +86,7 @@ const Navbar = () => {
                     className={styles.menuDropDownItem}
                     href={`https://www.123fakturera.se${href}`}
                   >
-                    <span className={styles.collectionSpan}>
-                      <p className={styles.menuItemName}>{label}</p>
-                    </span>
+                    <p className={styles.menuItemName}>{label}</p>
                   </a>
                 ))}
               </div>
@@ -103,9 +101,7 @@ const Navbar = () => {
                   className={styles.pcMenuItems}
                   href={`https://www.123fakturera.se${href}`}
                 >
-                  <span className={styles.collectionSpan}>
-                    <span className={styles.collectionitem}>{label}</span>
-                  </span>
+                  {label}
                 </a>
               ))}
             </div>
@@ -116,7 +112,7 @@ const Navbar = () => {
                 onClick={handleLangDrop}
               >
                 <div className={styles.languageTitleBox}>
-                  <span className={styles.languageName}>{language.label}</span>
+                  <p className={styles.languageName}>{language.label}</p>
                   <img
                     src={`https://storage.123fakturera.se/public/flags/${language.flag}.png`}
                     className={`${styles.flagIcon} ${styles.dropDownImage}`}

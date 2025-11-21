@@ -6,16 +6,14 @@ import TermsPage from './pages/terms';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/pricelist" element={<PriceList />} />
-          <Route path="/terms" element={<TermsPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/pricelist" element={<PriceList />} />
+        <Route path="/terms" element={<TermsPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
