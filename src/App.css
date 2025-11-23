@@ -1,7 +1,7 @@
 .main-page {
   height: 2500px;
   background-image: url('https://storage.123fakturera.se/public/wallpapers/sverige43.jpg');
-  background-position: 50% 60%;
+  background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -17,4 +17,15 @@
 
 button {
   border: none;
+}
+
+@media (max-width: 899px) {
+  .main-page {
+    height: 2700px;
+  }
+}
+@media (max-width: 499px) {
+  .main-page {
+    height: 3500px;
+  }
 }

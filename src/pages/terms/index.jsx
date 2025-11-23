@@ -9,8 +9,6 @@ const TermsPage = () => {
     <div className={'main-page'}>
       <Navbar />
       <div className={styles.content}>
-        <Navbar />
-
         <section className={styles.termsSection}>
           <div className={styles.termsTopText}>
             <h1 className={styles.termsHeading}>{t('Terms')}</h1>
