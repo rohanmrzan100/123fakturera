@@ -10,8 +10,9 @@ const TermsPage = () => {
       <div className={'background-container'}>
         <img src="https://storage.123fakturera.se/public/wallpapers/sverige43.jpg" alt="" />
       </div>
-      <Navbar />
       <div className={styles.content}>
+        <Navbar />
+
         <section className={styles.termsSection}>
           <div className={styles.termsTopText}>
             <h1 className={styles.termsHeading}>{t('Terms')}</h1>
@@ -25,10 +26,7 @@ const TermsPage = () => {
           </div>
 
           <div className={styles.termsTopText}>
-            <button
-              className={`${styles.goBackButton}`}
-              onClick={handleGoBack}
-            >
+            <button className={`${styles.goBackButton}`} onClick={handleGoBack}>
               {t('Close and Go Back')}
             </button>
           </div>

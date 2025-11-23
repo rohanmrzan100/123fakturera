@@ -74,8 +74,9 @@ const LoginPage = () => {
       <div className={'background-container'}>
         <img src="https://storage.123fakturera.se/public/wallpapers/sverige43.jpg" alt="" />
       </div>
-      <Navbar />
-      <div className={styles.mainBody}>
+
+      <div className={styles.content}>
+        <Navbar />
         <div className={styles.loginBox}>
           <form onSubmit={handleSubmit} noValidate>
             <h2 className={styles.loginHeading}>{t('Log in')}</h2>
@@ -140,30 +141,30 @@ const LoginPage = () => {
             </a>
           </section>
         </div>
-      </div>
-      <div className={styles.footer}>
-        <footer className={styles.footerMain}>
-          <div className={styles.footerTop}>
-            <div className={styles.fakturaText}>123 Fakturera</div>
-            <div className={styles.footerMenu}>
-              <a href="https://www.123fakturera.se/index.html">
-                <p>{t('Home')}</p>
-              </a>
-              <a href="https://www.123fakturera.se/bestall.html">
-                <p>{t('Order')}</p>
-              </a>
-              <a href="https://www.123fakturera.se/kontaktaoss.html">
-                <p>{t('Contact us')}</p>
-              </a>
+        <div className={styles.footer}>
+          <footer className={styles.footerMain}>
+            <div className={styles.footerTop}>
+              <div className={styles.fakturaText}>123 Fakturera</div>
+              <div className={styles.footerMenu}>
+                <a href="https://www.123fakturera.se/index.html">
+                  <p>{t('Home')}</p>
+                </a>
+                <a href="https://www.123fakturera.se/bestall.html">
+                  <p>{t('Order')}</p>
+                </a>
+                <a href="https://www.123fakturera.se/kontaktaoss.html">
+                  <p>{t('Contact us')}</p>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.copyright}>
-            <p className={styles.copyrightText}>
-              © Lättfaktura, CRO no. 638537, 2025. All rights reserved.
-            </p>
-          </div>
-        </footer>
+            <div className={styles.copyright}>
+              <p className={styles.copyrightText}>
+                © Lättfaktura, CRO no. 638537, 2025. All rights reserved.
+              </p>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
   );
