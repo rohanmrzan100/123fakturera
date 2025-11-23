@@ -7,9 +7,7 @@ const TermsPage = () => {
   function handleGoBack() {}
   return (
     <div className={'main-page'}>
-      <div className={'background-container'}>
-        <img src="https://storage.123fakturera.se/public/wallpapers/sverige43.jpg" alt="" />
-      </div>
+      <Navbar />
       <div className={styles.content}>
         <Navbar />
 
