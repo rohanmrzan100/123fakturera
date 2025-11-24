@@ -1,10 +1,10 @@
 .main-page {
-  height: 2500px;
+  height: 100%;
   background-image: url('https://storage.123fakturera.se/public/wallpapers/sverige43.jpg');
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  padding-bottom: 200px;
 }
 
 .mt-6 {
@@ -19,9 +19,9 @@ button {
   border: none;
 }
 
-@media (max-width: 899px) {
+/* @media (max-width: 599px) {
   .main-page {
-    height: 2700px;
+    height: 2800px;
   }
 }
 @media (max-width: 499px) {
@@ -29,3 +29,23 @@ button {
     height: 3500px;
   }
 }
+@media (max-width: 399px) {
+  .main-page {
+    height: 4200px;
+  }
+}
+@media (max-width: 329px) {
+  .main-page {
+    height: 4700px;
+  }
+}
+@media (max-width: 299px) {
+  .main-page {
+    height: 5500px;
+  }
+}
+@media (max-width: 229px) {
+  .main-page {
+    height: 10000px;
+  }
+} */
